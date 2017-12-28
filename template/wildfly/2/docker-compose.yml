@@ -1,5 +1,5 @@
 jiva-w:
-  image: paulohms/jivaw:1.1
+  image: jivagestaoempresarial/jivaw:1.0
   restart: always
   environment:
     - IP_BD_JIVAW=${ip_bd}
@@ -21,10 +21,10 @@ jiva-w:
   command: ["/bin/sh","-c", "sed -i 's/-Xms1024M -Xmx1024M/${memoria_jboss}/g' /home/mgeweb/wildfly_producao/bin/standalone.conf && sudo chown -R mgeweb:mgeweb /home/mgeweb/sankhyaw-wpm/ && java -jar /home/mgeweb/DPM/docker-package-manager.jar && sudo /home/mgeweb/./sannfe.sh && sudo chown mgeweb:mgeweb / && sudo chown -R mgeweb:mgeweb /home/mgeweb/SanNFe /home/mgeweb/wildfly_producao/standalone/log /home/mgeweb/impressao /home/mgeweb/repositorio && sleep 2 && /home/mgeweb/wildfly_producao/bin/./standalone.sh -Djape.lazy.init=true -Djape.lob.fields.as.lazy=true -Djape.ignore.ligacao.inconsistente=true"]
   ports:
     - 8080
-  #mem_limit: '1536m' 
+  mem_limit: '1536m' 
 
 sas:
-  image: paulohms/sas:1.0
+  image: jivagestaoempresarial/sas:1.0
   restart: always
   environment:
     - IP_BD_JIVAW=${ip_bd}
@@ -33,13 +33,4 @@ sas:
     - USUARIO_BD_JIVAW=${usuario_bd}
     - SENHA_BD_JIVAW=${senha_bd}
     - IP_CONTAINER=${agent_ip}
-  command: ["/bin/sh","-c", "java -jar /opt/DSM/docker-sas-manager.jar && sleep 2 & /opt/SAS*/bin/./run-sas.sh && sleep 2 && tail -f /opt/SAS*/log/server*.log"]
-
-#load-balancer:
-#    image: rancher/lb-service-haproxy:v0.7.9
-#    ports:
-#      - 8080
-#    labels:
-#      io.rancher.container.agent.role: environmentAdmin
-#      io.rancher.container.create_agent: 'true'
-#
+  command: ["/bin/sh","-c", "java -jar /opt/DSM/docker-sas-manager.jar && sleep 2 & /opt/./run-sas.sh && sleep 2 && tail -f /opt/SAS*/log/server*.log"]
