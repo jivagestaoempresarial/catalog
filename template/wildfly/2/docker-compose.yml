@@ -24,7 +24,7 @@ jiva-w:
   mem_limit: '1536m' 
 
 sas:
-  image: paulohms/sas:1.0
+  image: jivagestaoempresarial/sas:1.0
   restart: always
   environment:
     - IP_BD_JIVAW=${ip_bd}
@@ -33,4 +33,4 @@ sas:
     - USUARIO_BD_JIVAW=${usuario_bd}
     - SENHA_BD_JIVAW=${senha_bd}
     - IP_CONTAINER=${agent_ip}
-  command: ["/bin/sh","-c", "java -jar /opt/DSM/docker-sas-manager.jar && sleep 2 & /opt/SAS*/bin/./run-sas.sh && sleep 2 && tail -f /opt/SAS*/log/server*.log"]
+  command: ["/bin/sh","-c", "java -jar /opt/DSM/docker-sas-manager.jar && tar -xzf /tmp/SAS.tar.gz -C /opt/ && sleep 2 && /opt/./run-sas.sh && sleep 2 && tail -f /opt/SAS*/log/server*.log"]
