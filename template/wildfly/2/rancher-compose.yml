@@ -44,7 +44,7 @@
         - -Xms512m -Xmx512m
         - -Xms512m -Xmx1024m
       required: true
-    - variable: "sas-delphi"
+    - variable: "sas_delphi"
       label: "Atualizar IP do SAS ao reiniciar container"
       description: |
         Atualizar IP do SAS ao reiniciar container
