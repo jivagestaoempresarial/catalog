@@ -10,6 +10,7 @@ jiva-w:
     - PACOTE_JIVAW=jiva-w_3.22b48.pkg
     - TIPO_SERVIDOR=WILDFLY
     - TIPO_BD=Oracle
+    - UPD_IP_SAS=${sas-delphi}
   links:
     - sas
   volumes: 
