@@ -47,7 +47,7 @@
     - variable: "sas_delphi"
       label: "Atualizar IP do SAS ao reiniciar container"
       description: |
-        Atualizar IP do SAS ao reiniciar container
+        Atualizar IP do SAS ao reiniciar container, caso o cliente tenha o Delphi, marcar false.
       type: boolean
       default: true
       required: true
