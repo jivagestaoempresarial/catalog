@@ -41,7 +41,7 @@
         Memória de inicialização do Jboss
       type: enum
       options:
-        - -Xms512m -Xmx1024m
+        - -Xms512m -Xmx1150m
         - -Xms512m -Xmx1304m
       required: true
     - variable: "sas_delphi"
