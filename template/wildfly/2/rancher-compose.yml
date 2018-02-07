@@ -52,6 +52,7 @@
       default: true
       required: true
 jiva-w:
+  drain_timeout_ms: 10000
   scale: 1
   health_check:
       port: 8080
