@@ -51,6 +51,12 @@ catalog:
         - -Xms512m -Xmx1150m
         - -Xms512m -Xmx1304m
       required: true
+    - variable: memory_container
+      label: "Quantidade de memória máxima do container"
+      description: Memória máxima que será alocada para o container. Ao exaurir memória RAM será utilizado o SWAP do sistema operacional.
+      type: string
+      default: "1536"
+      required: true
     - variable: "sas_delphi"
       label: "Atualizar IP do SAS ao reiniciar container"
       description: |
@@ -63,10 +69,4 @@ catalog:
       description: Caso seja marcado true irá subir um container para o Data Sync
       type: boolean
       default: false
-      required: true
-    - variable: memory_container
-      label: "Quantidade de memória máxima do container"
-      description: Memória máxima que será alocada para o container. Ao exaurir memória RAM será utilizado o SWAP do sistema operacional.
-      type: string
-      default: "1536"
       required: true
