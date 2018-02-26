@@ -1,7 +1,7 @@
 version: '2'
 services:
   jiva-w:
-    image: jivagestaoempresarial/jivaw:1.0
+    image: jivagestaoempresarial/jivaw:1.1
     restart: always
     environment:
       - IP_BD_JIVAW=${ip_bd}
