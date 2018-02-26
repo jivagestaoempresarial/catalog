@@ -60,7 +60,13 @@ catalog:
       required: true
     - variable: DATA_SYNC
       label: "Cliente possui Data Sync?"
-      description: Caso seja marcado true, irá subir um container para o Data Sync
+      description: Caso seja marcado true irá subir um container para o Data Sync
       type: boolean
       default: false
+      required: true
+    - variable: memory_container
+      label: "Quantidade de memória máxima do container"
+      description: Memória máxima que será alocada para o container. Ao exaurir memória RAM será utilizado o SWAP do sistema operacional.
+      type: string
+      default: "1536"
       required: true
