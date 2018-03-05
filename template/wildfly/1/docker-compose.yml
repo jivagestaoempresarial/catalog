@@ -36,7 +36,7 @@ services:
         response_timeout: 60000
 
   sas:
-    image: jivagestaoempresarial/sas:1.0
+    image: jivagestaoempresarial/sas:1.1
     restart: always
     environment:
       - IP_BD_JIVAW=${ip_bd}
