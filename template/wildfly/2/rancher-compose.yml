@@ -1,4 +1,5 @@
-.catalog:
+version: '2'
+catalog:
   name: "Jiva-W"
   version: "3.22b140"
   description: "Criar um novo container utilizando o template"
@@ -44,34 +45,21 @@
         - -Xms512m -Xmx1150m
         - -Xms512m -Xmx1304m
       required: true
-    - variable: "sas_delphi"
-      label: "Atualizar IP do SAS ao reiniciar container"
-      description: |
-        Atualizar IP do SAS ao reiniciar container, caso o cliente tenha o Delphi, marcar false.
-      type: boolean
-      default: true
+    - variable: memory_container
+      label: "Quantidade de memória máxima do container"
+      description: Memória máxima que será alocada para o container. Ao exaurir memória RAM será utilizado o SWAP do sistema operacional.
+      type: string
+      default: "1536"
       required: true
-jiva-w:
-  drain_timeout_ms: 10000
-  scale: 1
-  health_check:
-      port: 8080
-      request_line: GET / HTTP/1.0
-      interval: 90000
-      initializing_timeout: 300000
-      reinitializing_timeout: 300000
-      unhealthy_threshold: 3
-      strategy: recreate
-      healthy_threshold: 1
-      response_timeout: 60000
-sas:
-  scale: 1
-  health_check:
-      response_timeout: 60000
-      healthy_threshold: 1
-      port: 10050
-      unhealthy_threshold: 2
-      initializing_timeout: 60000
-      interval: 60000
-      strategy: recreate
-      reinitializing_timeout: 60000
+    - variable: sas_delphi
+      label: "Cliente possui Delphi?"
+      description: Caso seja marcado true o container do SAS não irá atualizar o parâmetro IPSERVACESS
+      type: boolean
+      default: false
+      required: true
+    - variable: data_sync
+      label: "Cliente possui Data Sync?"
+      description: Caso seja marcado true irá subir um container para o Data Sync
+      type: boolean
+      default: false
+      required: true
