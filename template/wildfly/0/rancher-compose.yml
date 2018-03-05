@@ -1,7 +1,7 @@
 version: '2'
 catalog:
   name: "Jiva-W"
-  version: "3.20b315"
+  version: "Outras versões"
   description: "Criar um novo container utilizando o template"
   questions:
     - variable: "pacote_jivaw"
@@ -57,14 +57,13 @@ catalog:
       type: string
       default: "1536"
       required: true
-    - variable: "sas_delphi"
-      label: "Atualizar IP do SAS ao reiniciar container"
-      description: |
-        Atualizar IP do SAS ao reiniciar container, caso o cliente tenha o Delphi, marcar false.
+    - variable: sas_delphi
+      label: "Cliente possui Delphi?"
+      description: Caso seja marcado true o container do SAS não irá atualizar o parâmetro IPSERVACESS
       type: boolean
-      default: true
+      default: false
       required: true
-    - variable: DATA_SYNC
+    - variable: data_sync
       label: "Cliente possui Data Sync?"
       description: Caso seja marcado true irá subir um container para o Data Sync
       type: boolean
