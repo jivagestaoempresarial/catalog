@@ -55,7 +55,7 @@ catalog:
       label: "Cliente possui Delphi?"
       description: Caso seja marcado true o container do SAS não irá atualizar o parâmetro IPSERVACESS
       type: boolean
-      default: true
+      default: false
       required: true
     - variable: data_sync
       label: "Cliente possui Data Sync?"
