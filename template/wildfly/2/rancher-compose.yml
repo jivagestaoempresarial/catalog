@@ -37,9 +37,9 @@ catalog:
       type: "password"
       required: true
     - variable: "memoria_jboss"
-      label: "Memória de inicialização do Jboss"
+      label: "Memória de inicialização do WildFly"
       description: |
-        Memória de inicialização do Jboss
+        Memória de inicialização do WildFly
       type: enum
       options:
         - -Xms512m -Xmx1150m
