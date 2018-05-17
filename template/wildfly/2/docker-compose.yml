@@ -9,7 +9,7 @@ services:
       - SID_BD_JIVAW=${sid_bd}
       - USUARIO_BD_JIVAW=${usuario_bd}
       - SENHA_BD_JIVAW=${senha_bd}
-      - PACOTE_JIVAW=jiva-w_3.24b32.pkg
+      - PACOTE_JIVAW=jiva-w_3.24b47.pkg
       - TIPO_SERVIDOR=WILDFLY
       - TIPO_BD=Oracle
     links:
@@ -50,6 +50,7 @@ services:
       - /home/mgeweb/compartilhado/pacotes/sas:/home/mgeweb/pacotes-sas/  # Pacotes do SAS
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/SAS/:/opt/SAS*/licenca # Licenca do SAS
     command: ["/bin/sh","-c", "java -jar /opt/DSM/docker-sas-manager.jar && tar -xzf /tmp/SAS.tar.gz -C /opt/ && sleep 2 && /opt/./run-sas.sh && sleep 2 && tail -f /opt/SAS*/log/server*.log"]
+    mem_reservation: 150m
     health_check:
       response_timeout: 60000
       healthy_threshold: 1
@@ -76,4 +77,5 @@ services:
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/datasync/work:/home/mgeweb/DataSync/work
       - /home/mgeweb/compartilhado/pacotes/datasync:/home/mgeweb/pacotes-datasync/  # Pacotes do Data Sync
     command: ["/bin/sh","-c", "sudo chown -R mgeweb:mgeweb /home/mgeweb/DataSync/ && java -jar /home/mgeweb/docker-datasync-manager.jar && /home/mgeweb/./run-datasync.sh && /home/mgeweb/DataSync/./datasync-service start && sleep 3 && tail -f /home/mgeweb/DataSync/log/server.log"]
+    mem_reservation: 750m
   {{- end}}
