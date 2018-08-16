@@ -48,8 +48,8 @@ services:
       - HASDELPHI=${sas_delphi}
     volumes: 
       - /home/mgeweb/compartilhado/pacotes/sas:/home/mgeweb/pacotes-sas/  # Pacotes do SAS
-      - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/SAS/:/opt/SAS*/licenca # Licenca do SAS
-    command: ["/bin/sh","-c", "java -jar /opt/DSM/docker-sas-manager.jar && tar -xzf /tmp/SAS.tar.gz -C /opt/ && sleep 2 && /opt/./run-sas.sh && sleep 2 && tail -f /opt/SAS*/log/server*.log"]
+      - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/SAS/:/opt/SAS/licenca # Licenca do SAS
+    command: ["/bin/sh","-c", "java -jar /opt/DSM/docker-sas-manager.jar && tar -xzf /tmp/SAS.tar.gz -C /opt/ && mv /opt/SAS* /opt/SAS && sleep 2 && /opt/./run-sas.sh && sleep 2 && tail -f /opt/SAS/log/server*.log"]
     mem_reservation: 100m
     health_check:
       response_timeout: 60000
