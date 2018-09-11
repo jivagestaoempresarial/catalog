@@ -81,14 +81,14 @@ services:
   {{- end}}
 
   {{- if eq .Values.e_social "true"}}
-    sanesocial:
-      image: jivagestaoempresarial/esocial:1.1
-      restart: always
-      volumes:
-        - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/conf:/home/mgeweb/sanesocial/conf
-        - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/certificados:/home/mgeweb/sanesocial/certificados
-        - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/log:/home/mgeweb/sanesocial/log
-        - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/properties:/home/mgeweb/sanesocial/properties
+  sanesocial:
+    image: jivagestaoempresarial/esocial:1.1
+    restart: always
+    volumes:
+      - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/conf:/home/mgeweb/sanesocial/conf
+      - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/certificados:/home/mgeweb/sanesocial/certificados
+      - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/log:/home/mgeweb/sanesocial/log
+      - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/properties:/home/mgeweb/sanesocial/properties
     command: ["/bin/sh","-c", "sudo chown -R mgeweb:mgeweb /home/mgeweb/sanesocial/ && java -jar /home/mgeweb/InstaladorSanESocial.jar &&
       /home/mgeweb/./run-sanesocial.sh && /home/mgeweb/sanesocial/./sanesocial-service start && sleep 3 && tail -f /home/mgeweb/sanesocial/log/server.log"]
     mem_reservation: 512m
