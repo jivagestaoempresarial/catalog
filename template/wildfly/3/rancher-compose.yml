@@ -69,3 +69,9 @@ catalog:
       type: boolean
       default: false
       required: true
+    - variable: e_social
+      label: "Cliente possui eSocial?"
+      description: Caso seja marcado true irá subir um container com o SanESocial
+      type: boolean
+      default: false
+      required: true
