@@ -46,6 +46,7 @@ services:
       - USUARIO_BD_JIVAW=${usuario_bd}
       - SENHA_BD_JIVAW=${senha_bd}
       - HASDELPHI=${sas_delphi}
+      - TIPO_BD=${tp_bd}
     volumes: 
       - /home/mgeweb/compartilhado/pacotes/sas:/home/mgeweb/pacotes-sas/  # Pacotes do SAS
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/SAS/:/opt/SAS/licenca # Licenca do SAS
