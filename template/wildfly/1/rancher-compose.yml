@@ -1,7 +1,7 @@
 version: '2'
 catalog:
   name: "Jiva-W"
-  version: "3.29b319"
+  version: "3.29b321"
   description: "Criar um novo container utilizando o template"
   questions:
     - variable: "ip_bd"
