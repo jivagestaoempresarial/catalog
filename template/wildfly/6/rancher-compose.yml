@@ -91,7 +91,6 @@ catalog:
       description: "Chave do cliente"
       type: string
       default: ""
-      required: true
 
     - variable: sannfe_enabled
       label: "Habilitar SanNfe?"
