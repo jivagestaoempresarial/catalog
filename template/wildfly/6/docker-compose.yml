@@ -31,7 +31,6 @@ services:
     cpu_quota: 66000
     mem_reservation: 1024m
     mem_swappiness: 10 # Irá usar o swap apenas quando tiver 10% de mem disponível
-    memswap_limit: 700m
     drain_timeout_ms: 10000
     health_check:
         port: 8080
