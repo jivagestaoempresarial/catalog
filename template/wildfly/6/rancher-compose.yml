@@ -92,6 +92,12 @@ catalog:
       type: string
       default: ""
 
+    - variable: max_size
+      label: "Limite de registros"
+      description: "limita a quantidade de registros em 2000 para nao prejudicar a performance e a memoria do jiva-w"
+      type: string
+      default: "2000"
+
     - variable: sannfe_enabled
       label: "Habilitar SanNfe?"
       description: "Caso seja marcado true irá realizar o download do SanNfe "

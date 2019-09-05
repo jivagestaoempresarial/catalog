@@ -16,6 +16,7 @@ services:
       - CLIENTE={{ .Stack.Name }}
       - HASSANFE=${sannfe_enabled}
       - CHAVESAS=${chave_cliente}
+      - MAXRSLTSIZE=${max_size}
     links:
       - sas
     volumes: 
