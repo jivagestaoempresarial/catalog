@@ -31,7 +31,7 @@ services:
     mem_limit: ${memory_container}m
     cpu_quota: 66000
     mem_reservation: 1024m
-    mem_swappiness: 10 # Irá usar o swap apenas quando tiver 10% de mem disponível
+    mem_swappiness: 1 # Irá usar o swap apenas quando tiver 1% de mem disponível
     drain_timeout_ms: 10000
     health_check:
         port: 8080
@@ -61,6 +61,8 @@ services:
     command: ["/bin/sh","-c", "sudo chown -R mgeweb:mgeweb  /home/mgeweb/pacotes-sas/ /tmp/ && java -jar /opt/DSM/docker-sas-manager.jar /SAS  && tar -xzf /tmp/SAS.tar.gz -C /tmp/ &&  sudo chown -R mgeweb:mgeweb /tmp/ /opt/SAS/* && sleep 2  && /opt/DSM/scripts/./run-sas.sh && sleep 2 && tail -f /opt/SAS/log/server*.log"]
     mem_reservation: 100m
     mem_limit: 512m
+    mem_swappiness: 1 # Irá usar o swap apenas quando tiver 1% de mem disponível
+    cpu_quota: 10000
     health_check:
       response_timeout: 60000
       healthy_threshold: 1
@@ -87,7 +89,8 @@ services:
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/datasync/work:/home/mgeweb/DataSync/work
       - /home/mgeweb/compartilhado/pacotes/datasync:/home/mgeweb/pacotes-datasync/  # Pacotes do Data Sync
     command: ["/bin/sh","-c", "sudo chown -R mgeweb:mgeweb /home/mgeweb/pacotes-datasync/ && java -jar /home/mgeweb/DDM/docker-datasync-manager.jar  && sudo chown -R mgeweb:mgeweb /home/mgeweb/DataSync/ && /home/mgeweb/DDM/scripts/./run-datasync.sh && /home/mgeweb/DataSync/./datasync-service start && sleep 3 && tail -f /home/mgeweb/DataSync/log/server.log"]
-    cpu_quota: 35000
+    cpu_quota: 15000
+    mem_swappiness: 1 # Irá usar o swap apenas quando tiver 1% de mem disponível
     mem_reservation: 300m
     mem_limit: 700m
   {{- end}}
@@ -102,5 +105,8 @@ services:
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/log:/home/mgeweb/sanesocial/log
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/properties:/home/mgeweb/sanesocial/properties
     command: ["/bin/sh","-c", "java -jar /home/mgeweb/DSEM/docker-sanesocial-manager.jar && /home/mgeweb/DSEM/scripts/./run-sanesocial.sh && /home/mgeweb/sanesocial/./sanesocial-service start && sleep 3 && tail -f /home/mgeweb/sanesocial/log/server.log"]
+    cpu_quota: 15000
+    mem_swappiness: 1 # Irá usar o swap apenas quando tiver 1% de mem disponível
     mem_reservation: 512m
+    mem_limit: 700m
   {{- end}}
