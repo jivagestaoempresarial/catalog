@@ -1,0 +1,5 @@
+version: '2'
+catalog:
+  name: "Check mK"
+  version: "1.0"
+  description: "Monitoramento de maquinas"
