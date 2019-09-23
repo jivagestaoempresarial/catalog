@@ -1,5 +1,5 @@
 version: '2'
 catalog:
-  name: "Check-Mk"
+  name: "CheckMk"
   version: "1.0"
   description: "Monitoramento de maquinas"

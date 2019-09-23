@@ -1,6 +1,5 @@
-name: Check-Mk
+name: CheckMk
 description: |
   Container de monitoramento Check Mk
-version: 1.1
+version: 1.0
 category: Collaboration
-maintainer: Cloud <cloud@sankhya.com.br>
