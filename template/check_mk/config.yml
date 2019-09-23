@@ -1,4 +1,4 @@
-name: Check Mk
+name: Check-Mk
 description: |
   Container de monitoramento Check Mk
 version: 1.1
