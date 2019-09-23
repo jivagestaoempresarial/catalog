@@ -2,7 +2,6 @@ version: '2'
 services:
  check_mk:
     image: checkmk/check-mk-raw:1.5.0-latest
-    container_name: check_mk
     restart: always
     volumes:
       - /home/mgeweb/compartilhado/monitoring/check_mk:/omd/sites
@@ -11,12 +10,12 @@ services:
     mem_limit: 700m
     mem_swappiness: 0
     health_check:
-      port: 5000
-      request_line: GET / HTTP/1.0
-      interval: 90000
-      initializing_timeout: 250000
-      reinitializing_timeout: 250000
-      unhealthy_threshold: 3
-      strategy: recreate
-      healthy_threshold: 1
-      response_timeout: 60000
+        port: 5000
+        request_line: GET / HTTP/1.0
+        interval: 90000
+        initializing_timeout: 250000
+        reinitializing_timeout: 250000
+        unhealthy_threshold: 3
+        strategy: recreate
+        healthy_threshold: 1
+        response_timeout: 60000
