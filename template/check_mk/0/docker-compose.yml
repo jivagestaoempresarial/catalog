@@ -1,10 +1,10 @@
 version: '2'
 services:
   checkmk:
-    image: checkmk/check-mk-raw:1.5.0-latest
+    image: checkmk/check-mk-raw:1.6.0-latest
     restart: always
     volumes:
-      - /home/mgeweb/compartilhado/monitoring/check_mk:/omd/sites
+      - /home/mgeweb/monitoring/check_mk:/omd/sites
     ports:
       - "8081:5000"
     mem_limit: 700m
