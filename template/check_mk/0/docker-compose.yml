@@ -1,7 +1,7 @@
 version: '2'
 services:
   checkmk:
-    image: checkmk/check-mk-raw:1.5.0-latest
+    image: checkmk/check-mk-raw:1.6.0-latest
     restart: always
     volumes:
       - /home/mgeweb/monitoring/check_mk:/omd/sites
