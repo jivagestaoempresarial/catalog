@@ -97,7 +97,7 @@ services:
 
   {{- if eq .Values.e_social "true"}}
   sanesocial:
-    image: jivagestaoempresarial/esocial:1.4
+    image: jivagestaoempresarial/esocial:1.5
     restart: always
     volumes:
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/conf:/home/mgeweb/sanesocial/conf
