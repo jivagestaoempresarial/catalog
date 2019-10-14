@@ -4,6 +4,8 @@
 
  Este template faz a criação de todos os artefatos necessários para o cliente utilizar o **Jiva-W**.
  
+#### Versão com OpenJDK11
+ 
 ### Como usar?:
 
  Preencha as informações abaixo com as informações do cliente.
