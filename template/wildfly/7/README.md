@@ -4,10 +4,15 @@
 
  Este template faz a criação de todos os artefatos necessários para o cliente utilizar o **Jiva-W**.
  
-#### Versão com OpenJDK11
+### Versão com OpenJDK11
+
+Versão experimental com OpenJdk11, com os seguintes beneficios: 
+
+- Respeita Limitações de Memoria e Cpu
+- Otimização do G1 (Garbage collector)
+- Mais performance
 
 
- 
 ### Como usar?:
 
  Preencha as informações abaixo com as informações do cliente.
