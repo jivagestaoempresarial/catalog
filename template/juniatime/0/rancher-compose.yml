@@ -1,6 +1,6 @@
 version: '2'
 catalog:
-  name: "juniatime"
+  name: "Juniatime"
   version: "1.0"
   description: "Monitoramento de maquinas"
   questions:
