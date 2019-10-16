@@ -105,7 +105,7 @@ services:
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/log:/home/mgeweb/sanesocial/log
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/properties:/home/mgeweb/sanesocial/properties
       - /home/mgeweb/compartilhado/pacotes/saesocial:/home/mgeweb/versoes # Pacotes do Esocial
-    command: ["/bin/sh","-c", "java -jar /home/mgeweb/DSEM/docker-sanesocial-manager.jar && /home/mgeweb/DSEM/scripts/./run-sanesocial.sh && /home/mgeweb/sanesocial/./sanesocial-service start && sleep 3 && tail -f /home/mgeweb/sanesocial/log/server.log"]
+    command: ["/bin/sh","-c", "java -jar /home/mgeweb/DSEM/docker-sanesocial-manager.jar && /home/mgeweb/DSEM/scripts/./run-sanesocial.sh && /home/mgeweb/sanesocial/./sanesocial-service start && sleep 10 && tail -f /home/mgeweb/sanesocial/log/server.log"]
     cpu_quota: 15000
     mem_swappiness: 1 # Irá usar o swap apenas quando tiver 1% de mem disponível
     mem_reservation: 512m
