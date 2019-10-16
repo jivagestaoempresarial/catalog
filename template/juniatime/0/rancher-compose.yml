@@ -5,13 +5,13 @@ catalog:
   description: "Monitoramento de maquinas"
   questions:
     # Configurações do slack
-    - variable: slack.webhook
+    - variable: "slack_webhook"
       label: "Webhook slack"
       description: "url do serviço webhook"
       type: string
       required: true
     #configuração de origin
-    - variable: origin
+    - variable: "origin"
       label: "Origin permitida"
       description: "Origin permitida"
       type: string

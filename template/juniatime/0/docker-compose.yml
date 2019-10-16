@@ -6,7 +6,7 @@ services:
     environment: 
       - MONGOURL=mongo:27017
       - ORIGIN=${origin}
-      - WEBHOOK=${slack.webhook}
+      - WEBHOOK=${slack_webhook}
     links:
       - mongo
     labels:
