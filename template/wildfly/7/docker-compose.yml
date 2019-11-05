@@ -56,6 +56,7 @@ services:
       - SENHA_BD_JIVAW=${senha_bd}
       - HASDELPHI=${sas_delphi}
       - TIPO_BD=${tp_bd}
+      - JAVA_TOOL_OPTIONS=-Duser.language=pt -Duser.country=BR -Dsun.jnu.encoding=ISO-8859-1 -Dfile.encoding=ISO-8859-1
     volumes: 
       - /home/mgeweb/compartilhado/pacotes/sas:/home/mgeweb/pacotes-sas/  # Pacotes do SAS
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/SAS/:/opt/SAS/licenca # Licenca do SAS
@@ -78,6 +79,8 @@ services:
   datasync:
     image: jivagestaoempresarial/datasync:2.0
     restart: always
+    environment:
+      - JAVA_TOOL_OPTIONS=-Duser.language=pt -Duser.country=BR -Dsun.jnu.encoding=ISO-8859-1 -Dfile.encoding=ISO-8859-1
     volumes: 
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/datasync/conf:/home/mgeweb/DataSync/conf
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/datasync/email:/home/mgeweb/DataSync/email
@@ -100,6 +103,8 @@ services:
   sanesocial:
     image: jivagestaoempresarial/esocial:2.0
     restart: always
+    environment:
+      - JAVA_TOOL_OPTIONS=-Duser.language=pt -Duser.country=BR -Dsun.jnu.encoding=ISO-8859-1 -Dfile.encoding=ISO-8859-1
     volumes:
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/conf:/home/mgeweb/sanesocial/conf
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/sanesocial/certificados:/home/mgeweb/sanesocial/certificados
