@@ -114,6 +114,6 @@ services:
     command: ["/bin/sh","-c", "java -jar /home/mgeweb/DSEM/docker-sanesocial-manager.jar && /home/mgeweb/DSEM/scripts/./run-sanesocial.sh && /home/mgeweb/sanesocial/./sanesocial-service start && sleep 10 && tail -f /home/mgeweb/sanesocial/log/server.log"]
     cpu_quota: 15000
     mem_swappiness: 1 # Irá usar o swap apenas quando tiver 1% de mem disponível
-    mem_reservation: 512m
+    mem_reservation: 300m
     mem_limit: 1024m
   {{- end}}
