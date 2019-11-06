@@ -1,0 +1,46 @@
+version: '2'
+catalog:
+  name: "Celson-implanter"
+  version: "1.0"
+  description: "Container de importação, exportação e duplicação de bases"
+  questions:
+    # ACCOUNT PRD
+    - variable: "access_key_prd"
+      label: "Access key"
+      type: string
+      required: true
+    - variable: "secret_key_prd"
+      label: "Secret key"
+      type: string
+      required: true
+    - variable: "region_prd"
+      label: "Região AWS"
+      type: string
+      required: true
+    - variable: "bucket_prd"
+      label: "Nome do Bucket AWS"
+      type: string
+      required: true
+    # ACCOUNT TST
+    - variable: "access_key_tst"
+      label: "Access key"
+      type: string
+      required: true
+    - variable: "secret_key_tst"
+      label: "Secret key"
+      type: string
+      required: true
+    - variable: "region_tst"
+      label: "Região AWS"
+      type: string
+      required: true
+    - variable: "bucket_tst"
+      label: "Nome do Bucket AWS"
+      type: string
+      required: true
+    - variable: "origin"
+      label: "Origin permitida"
+      description: "Origin permitida"
+      type: string
+      required: true
+      group: "Configurações"

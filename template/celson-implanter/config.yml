@@ -1,0 +1,5 @@
+name: Celson-implanter
+description: |
+  Container de importação, exportação e duplicação de bases
+version: 1.0
+category: Collaboration
