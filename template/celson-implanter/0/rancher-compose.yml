@@ -7,37 +7,46 @@ catalog:
     # ACCOUNT PRD
     - variable: "access_key_prd"
       label: "Access key"
+      description: "Access key de Produção"
       type: string
       required: true
     - variable: "secret_key_prd"
       label: "Secret key"
+      description: "Secret key de Produção"
       type: string
       required: true
     - variable: "region_prd"
       label: "Região AWS"
+      description: "Região aws de Produção"
       type: string
       required: true
     - variable: "bucket_prd"
       label: "Nome do Bucket AWS"
+      description: "Nome do Bucket AWS de Produção"
       type: string
       required: true
     # ACCOUNT TST
     - variable: "access_key_tst"
       label: "Access key"
+      description: "Access key de Teste"
       type: string
       required: true
-    - variable: "secret_key_tst"
+    - variable: "secret_key_prd"
       label: "Secret key"
+      description: "Secret key de Teste"
       type: string
       required: true
-    - variable: "region_tst"
+    - variable: "region_prd"
       label: "Região AWS"
+      description: "Região aws de Teste"
       type: string
       required: true
-    - variable: "bucket_tst"
+    - variable: "bucket_prd"
       label: "Nome do Bucket AWS"
+      description: "Nome do Bucket AWS de Teste"
       type: string
       required: true
+
     - variable: "origin"
       label: "Origin permitida"
       description: "Origin permitida"

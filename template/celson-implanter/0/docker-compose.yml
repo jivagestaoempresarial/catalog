@@ -6,14 +6,14 @@ services:
     environment: 
       - MONGOURL=mongo:27017
       - ORIGIN=${origin}
-      - ACCESS_KEY_PRD=${ACCESS_KEY_PRD}
-      - SECRET_KEY_PRD=${SECRET_KEY_PRD}
-      - REGION_PRD=${REGION_PRD}
-      - BUCKET_PRD=${BUCKET_PRD}
-      - ACCESS_KEY_TST=${ACCESS_KEY_TST}
-      - SECRET_KEY_TST=${SECRET_KEY_TST}
-      - REGION_TST=${REGION_TST}
-      - BUCKET_TST=${BUCKET_TST}
+      - ACCESS_KEY_PRD=${access_key_prd}
+      - SECRET_KEY_PRD=${secret_key_prd}
+      - REGION_PRD=${region_prd}
+      - BUCKET_PRD=${bucket_prd}
+      - ACCESS_KEY_TST=${access_key_tst}
+      - SECRET_KEY_TST=${secret_key_tst}
+      - REGION_TST=${region_tst}
+      - BUCKET_TST=${bucket_tst}
     links:
       - mongo
     labels:
