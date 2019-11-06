@@ -96,7 +96,7 @@ services:
     cpu_quota: 15000
     mem_swappiness: 1 # Irá usar o swap apenas quando tiver 1% de mem disponível
     mem_reservation: 300m
-    mem_limit: 700m
+    mem_limit: 1024m
   {{- end}}
 
   {{- if eq .Values.e_social "true"}}
@@ -115,5 +115,5 @@ services:
     cpu_quota: 15000
     mem_swappiness: 1 # Irá usar o swap apenas quando tiver 1% de mem disponível
     mem_reservation: 512m
-    mem_limit: 700m
+    mem_limit: 1024m
   {{- end}}

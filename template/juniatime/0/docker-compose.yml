@@ -18,12 +18,12 @@ services:
         port: 8880
         request_line: GET / HTTP/1.0
         interval: 50000
-        initializing_timeout: 100000
-        reinitializing_timeout: 100000
+        initializing_timeout: 50000
+        reinitializing_timeout: 50000
         unhealthy_threshold: 3
         strategy: recreate
         healthy_threshold: 1
-        response_timeout: 60000
+        response_timeout: 50000
   mongo:
     image: mongo:3.4
     restart: always
