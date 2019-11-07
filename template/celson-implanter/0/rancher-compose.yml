@@ -31,17 +31,17 @@ catalog:
       description: "Access key de Teste"
       type: string
       required: true
-    - variable: "secret_key_prd"
+    - variable: "secret_key_tst"
       label: "Secret key"
       description: "Secret key de Teste"
       type: string
       required: true
-    - variable: "region_prd"
+    - variable: "region_tst"
       label: "Região AWS"
       description: "Região aws de Teste"
       type: string
       required: true
-    - variable: "bucket_prd"
+    - variable: "bucket_tst"
       label: "Nome do Bucket AWS"
       description: "Nome do Bucket AWS de Teste"
       type: string
