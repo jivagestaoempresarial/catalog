@@ -14,8 +14,6 @@ services:
       - SECRET_KEY_TST=${secret_key_tst}
       - REGION_TST=${region_tst}
       - BUCKET_TST=${bucket_tst}
-    links:
-      - mongo
     labels:
       io.rancher.container.pull_image: always
     ports:
@@ -31,14 +29,6 @@ services:
         strategy: recreate
         healthy_threshold: 1
         response_timeout: 50000
-  mongo:
-    image: mongo:3.4
-    restart: always
-    volumes: 
-      - /home/mgeweb/monitoring/mongo:/data/db
-    ports: 
-      - "27017:27017"
-    
 
 
     
