@@ -4,6 +4,11 @@ catalog:
   version: "1.0"
   description: "Container de importação, exportação e duplicação de bases"
   questions:
+    - variable: "mongo_url"
+      label: "Url do mongo"
+      description: "Url do mongo"
+      type: string
+      required: true
     # ACCOUNT PRD
     - variable: "access_key_prd"
       label: "Access key"

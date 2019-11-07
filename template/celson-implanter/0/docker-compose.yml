@@ -4,7 +4,7 @@ services:
     image: highlanderdantas/celson-implanter:1.0
     restart: always
     environment: 
-      - MONGOURL=mongo:27017
+      - MONGOURL=${mongo_url}:27017
       - ORIGIN=${origin}
       - ACCESS_KEY_PRD=${access_key_prd}
       - SECRET_KEY_PRD=${secret_key_prd}
