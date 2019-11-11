@@ -9,6 +9,21 @@ catalog:
       description: "Url do mongo"
       type: string
       required: true
+    - variable: "origin"
+      label: "Origin permitida"
+      description: "Origin permitida"
+      type: string
+      required: true
+    - variable: "clear_dmp_interval"
+      label: "Tempo de limpeza dos arquivos"
+      description: "Tempo em milisegundos para realização de limpeza dos arquivos do banco de dados salvos"
+      type: string
+      required: true
+    - variable: "synnc_interval"
+      label: "Tempo de sincronização dos arquivos s3 com o banco de dados"
+      description: "Tempo de sincronização dos arquivos s3 com o banco de dados"
+      type: string
+      required: true
     # ACCOUNT PRD
     - variable: "access_key_prd"
       label: "Access key"
@@ -52,9 +67,3 @@ catalog:
       type: string
       required: true
 
-    - variable: "origin"
-      label: "Origin permitida"
-      description: "Origin permitida"
-      type: string
-      required: true
-      group: "Configurações"

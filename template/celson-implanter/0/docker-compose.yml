@@ -14,6 +14,8 @@ services:
       - SECRET_KEY_TST=${secret_key_tst}
       - REGION_TST=${region_tst}
       - BUCKET_TST=${bucket_tst}
+      - CLEARDMPINTERVAL=${clear_dmp_interval}
+      - SYNCINTERVAL=${synnc_interval}
     labels:
       io.rancher.container.pull_image: always
     ports:
