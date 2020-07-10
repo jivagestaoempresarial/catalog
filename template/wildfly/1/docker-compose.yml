@@ -9,7 +9,7 @@ services:
       - SID_BD_JIVAW=${sid_bd}
       - USUARIO_BD_JIVAW=${usuario_bd}
       - SENHA_BD_JIVAW=${senha_bd}
-      - PACOTE_JIVAW=jiva-w_4.1b440.pkg
+      - PACOTE_JIVAW=jiva-w_4.1b442.pkg
       - TIPO_SERVIDOR=WILDFLY
       - TIPO_BD=Oracle
     links:
