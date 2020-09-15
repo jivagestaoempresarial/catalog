@@ -1,0 +1,32 @@
+version: '2'
+catalog:
+  name: "Juniatime"
+  version: "1.0"
+  description: "Monitoramento de maquinas"
+  questions:
+    - variable: "mongo_url"
+      label: "Url do mongo"
+      description: "Url do mongo"
+      type: string
+      required: true
+    # Configurações do slack
+    - variable: "juniatime-url"
+      label: "Url do juniatime"
+      description: "Url do juniatime"
+      type: string
+      required: true
+    - variable: "slack-p1"
+      label: "Webhook do canal slack para alertas p1"
+      description: "Webhook do canal slack para alertas p1"
+      type: string
+      required: true
+    - variable: "slack-p2"
+      label: "Webhook do canal slack para alertas p2"
+      description: "Webhook do canal slack para alertas p2"
+      type: string
+      required: true
+    - variable: "slack-p3"
+      label: "Webhook do canal slack para alertas p3"
+      description: "Webhook do canal slack para alertas p3"
+      type: string
+      required: true
