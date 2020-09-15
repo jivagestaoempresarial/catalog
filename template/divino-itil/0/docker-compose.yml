@@ -1,7 +1,7 @@
 version: '2'
 services:
-  juniatime:
-    image: highlanderdantas/divino-itio:1.0
+  divino-itil:
+    image: highlanderdantas/divino-itil:1.0
     restart: always
     environment: 
       - MONGOURL=${mongo_url}:27017
