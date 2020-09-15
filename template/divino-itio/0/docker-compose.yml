@@ -5,10 +5,10 @@ services:
     restart: always
     environment: 
       - MONGOURL=${mongo_url}:27017
-      - JUNIA_TIME_URL=${juniatime-url}
-      - SLACK_P1=${slack-p1}
-      - SLACK_P2=${slack-p2}
-      - SLACK_P3=${slack-p3}
+      - JUNIA_TIME_URL=${juniatime_url}
+      - SLACK_P1=${slack_p1}
+      - SLACK_P2=${slack_p2}
+      - SLACK_P3=${slack_p3}
     labels:
       io.rancher.container.pull_image: always
     ports:
