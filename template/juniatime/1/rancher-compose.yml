@@ -1,0 +1,19 @@
+version: '2'
+catalog:
+  name: "Juniatime"
+  version: "2.0"
+  description: "Monitoramento de maquinas"
+  questions:
+    # Configurações do slack
+    - variable: "slack_webhook"
+      label: "Webhook slack"
+      description: "url do serviço webhook"
+      type: string
+      required: true
+    #configuração de origin
+    - variable: "origin"
+      label: "Origin permitida"
+      description: "Origin permitida"
+      type: string
+      required: true
+      group: "Configurações"
