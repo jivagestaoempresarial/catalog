@@ -1,7 +1,7 @@
 version: '2'
 catalog:
   name: "Jiva-W"
-  version: "4.4b223"
+  version: "4.4b225"
   description: "VERSÃO EM TESTE"
   questions:
     - variable: "pacote_jivaw"
