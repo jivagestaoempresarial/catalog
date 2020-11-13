@@ -31,6 +31,11 @@ services:
       - /home/mgeweb/monitoring/mongo:/data/db
     ports: 
       - "27017:27017"
+  mongo-backups:
+    image: danmasilva/mongo-juniatime-backups:latest
+    restart: always
+    volumes:
+      - /home/mgeweb/monitoring/mongo-backups
     
 
 
