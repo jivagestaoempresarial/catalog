@@ -2,7 +2,7 @@ version: '2'
 catalog:
   name: "Jiva-W"
   version: "TH-V2.1"
-  description: "VERSÃO EM TESTE"
+  description: "VERSÃO PRODUÇÃO"
   questions:
     # Pacote Instalação
     - variable: "pacote_jivaw"

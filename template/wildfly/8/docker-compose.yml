@@ -1,7 +1,7 @@
 version: '2'
 services:
   jiva-w:
-    image: jivagestaoempresarial/snk-jiva-w:2.6
+    image: sankhyacloud/plataforma-om:jdk11-1.2.2
     restart: always
     environment:
       - IP_BD_JIVAW=${ip_bd}
@@ -17,6 +17,8 @@ services:
       - HASSANFE=${sannfe_enabled}
       - CHAVESAS=${chave_cliente}
       - MAXRSLTSIZE=${max_size}
+      - HASEXTENSIONS=''
+      - EXTENSION_ZIPURL=''
       - JAVA_TOOL_OPTIONS=-Duser.language=pt -Duser.country=BR -Dsun.jnu.encoding=ISO-8859-1 -Dfile.encoding=ISO-8859-1
     links:
       - sas
