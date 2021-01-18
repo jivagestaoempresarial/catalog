@@ -1,7 +1,7 @@
 version: '2'
 services:
   jiva-w:
-    image: sankhyacloud/plataforma-om:jdk11-1.2.2
+    image: sankhyacloud/plataforma-om:jdk11-1.2.4
     restart: always
     environment:
       - IP_BD_JIVAW=${ip_bd}
@@ -48,7 +48,7 @@ services:
         response_timeout: 60000
 
   sas:
-    image: jivagestaoempresarial/sas:2.0
+    image: sankhyacloud/sas:jdk11-1.0.1
     restart: always
     environment:
       - IP_BD_JIVAW=${ip_bd}
