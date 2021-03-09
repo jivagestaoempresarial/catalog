@@ -1,7 +1,7 @@
 version: '2'
 catalog:
   name: "Sankhya-W"
-  version: "3.0"
+  version: "v3.0"
   description: "VERSÃO PRODUÇÃO"
   questions:
     # Pacote Instalação
