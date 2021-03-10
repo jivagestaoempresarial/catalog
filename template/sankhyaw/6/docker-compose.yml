@@ -1,7 +1,7 @@
 version: '2'
 services:
   sankhya-w:
-    image: jivagestaoempresarial/snk-jiva-w:1.4
+    image: sankhyacloud/plataforma-om:jdk11-1.2.5
     restart: always
     environment:
       - IP_BD_SNKW=${ip_bd}
