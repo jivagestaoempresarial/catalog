@@ -1,11 +1,11 @@
 version: '2'
 catalog:
-  name: "Jiva-W"
-  version: "TH-V2.1"
+  name: "Sankhya-W"
+  version: "TH-V3.1"
   description: "VERSÃO PRODUÇÃO"
   questions:
     # Pacote Instalação
-    - variable: "pacote_jivaw"
+    - variable: "pacote_snkw"
       label: "Pacote para instalação"
       description: |
         Pacote que será instalado (será buscado no ftp-sankhya)

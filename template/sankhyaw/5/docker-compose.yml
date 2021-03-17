@@ -1,15 +1,15 @@
 version: '2'
 services:
-  jiva-w:
+  sankhya-w:
     image: sankhyacloud/plataforma-om:jdk11-1.2.4
     restart: always
     environment:
-      - IP_BD_JIVAW=${ip_bd}
-      - PORTA_BD_JIVAW=${porta_bd}
-      - SID_BD_JIVAW=${sid_bd}
-      - USUARIO_BD_JIVAW=${usuario_bd}
-      - SENHA_BD_JIVAW=${senha_bd}
-      - PACOTE_JIVAW=${pacote_jivaw}
+      - IP_BD_SNKW=${ip_bd}
+      - PORTA_BD_SNKW=${porta_bd}
+      - SID_BD_SNKW=${sid_bd}
+      - USUARIO_BD_SNKW=${usuario_bd}
+      - SENHA_BD_SNKW=${senha_bd}
+      - PACOTE_SNKW=${pacote_jivaw}
       - TIPO_SERVIDOR=WILDFLY
       - TIPO_BD=${tp_bd}
       - MEMORIA_JBOSS=${memoria_jboss}
@@ -30,7 +30,7 @@ services:
       - /home/mgeweb/compartilhado/pacotes/sannfe:/home/mgeweb/pacotes-sannfe/  # Pacotes do SanNFe
       - /home/mgeweb/compartilhado/pacotes/jivaw:/home/mgeweb/sankhyaw-dpm/pkgs # Pkgs Jiva-W
       - /home/mgeweb/compartilhado/clientes/{{ .Stack.Name }}/jboss_conf/:/home/mgeweb/.jboss_conf # Repositorio de sincronizacao
-    command: ["/bin/sh","-c", "sudo chown -R mgeweb:mgeweb /home/mgeweb/sankhyaw-dpm/ /home/mgeweb/repositorio /home/mgeweb/pacotes-sannfe/ && /home/mgeweb/DPM/scripts/./wildfly.sh && java -jar /home/mgeweb/DPM/docker-package-manager.jar && sleep 2 && /home/mgeweb/DPM/scripts/./sannfe.sh &&  sudo chown -R mgeweb:mgeweb /home/mgeweb/SanNFe /home/mgeweb/wildfly_producao/standalone/log  && /home/mgeweb/DPM/scripts/./visualvm.sh && sed -i 's/<min-pool-size>100</<min-pool-size>10</g' /home/mgeweb/wildfly_producao/standalone/deployments/mge-ds.xml && sed -i 's/<max-pool-size>100</<max-pool-size>50</g' /home/mgeweb/wildfly_producao/standalone/deployments/mge-ds.xml &&  sleep 2 && /home/mgeweb/wildfly_producao/bin/./standalone.sh -Djape.lazy.init=true -Djape.lob.fields.as.lazy=true -Djape.ignore.ligacao.inconsistente=true "]
+    command: ["/bin/sh","-c", "sudo chown -R mgeweb:mgeweb /home/mgeweb/sankhyaw-dpm/ /home/mgeweb/repositorio /home/mgeweb/pacotes-sannfe/ && /home/mgeweb/DPM/scripts/./wildfly.sh && java -jar /home/mgeweb/DPM/docker-package-manager.jar && sleep 2 && /home/mgeweb/DPM/scripts/./sannfe.sh &&  sudo chown -R mgeweb:mgeweb /home/mgeweb/SanNFe /home/mgeweb/wildfly_producao/standalone/log  && /home/mgeweb/DPM/scripts/./visualvm.sh && sed -i 's/<min-pool-size>100</<min-pool-size>10</g' /home/mgeweb/wildfly_producao/standalone/deployments/mge-ds.xml && sed -i 's/<max-pool-size>100</<max-pool-size>50</g' /home/mgeweb/wildfly_producao/standalone/deployments/mge-ds.xml &&  sleep 2 && /home/mgeweb/wildfly_producao/bin/./standalone.sh -Djape.lazy.init=true -Djape.lob.fields.as.lazy=true -Djape.ignore.ligacao.inconsistente=true"]
     mem_limit: ${memory_container}m
     cpu_quota: 66000
     mem_reservation: 1024m
@@ -51,11 +51,11 @@ services:
     image: sankhyacloud/sas:jdk11-1.0.1
     restart: always
     environment:
-      - IP_BD_JIVAW=${ip_bd}
-      - PORTA_BD_JIVAW=${porta_bd}
-      - SID_BD_JIVAW=${sid_bd}
-      - USUARIO_BD_JIVAW=${usuario_bd}
-      - SENHA_BD_JIVAW=${senha_bd}
+      - IP_BD_SNKW=${ip_bd}
+      - PORTA_BD_SNKW=${porta_bd}
+      - SID_BD_SNKW=${sid_bd}
+      - USUARIO_BD_SNKW=${usuario_bd}
+      - SENHA_BD_SNKW=${senha_bd}
       - HASDELPHI=${sas_delphi}
       - TIPO_BD=${tp_bd}
       - JAVA_TOOL_OPTIONS=-Duser.language=pt -Duser.country=BR -Dsun.jnu.encoding=ISO-8859-1 -Dfile.encoding=ISO-8859-1

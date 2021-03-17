@@ -1,11 +1,11 @@
 version: '2'
 catalog:
-  name: "Jiva-W"
-  version: "TH-V2.1"
+  name: "Sankhya-W"
+  version: "TH-V3.0"
   description: "VERSÃO PRODUÇÃO"
   questions:
     # Pacote Instalação
-    - variable: "pacote_jivaw"
+    - variable: "pacote_sankhyaw"
       label: "Pacote para instalação"
       description: |
         Pacote que será instalado (será buscado no ftp-sankhya)
@@ -94,7 +94,7 @@ catalog:
 
     - variable: max_size
       label: "Limite de registros"
-      description: "limita a quantidade de registros em 2000 para nao prejudicar a performance e a memoria do jiva-w"
+      description: "limita a quantidade de registros em 2000 para nao prejudicar a performance e a memoria do sankhya-w"
       type: string
       default: "2000"
 
