@@ -1,0 +1,44 @@
+version: '2'
+services:
+  juniatime:
+    image: danmasilva/juniatime:3.4
+    restart: always
+    environment: 
+      - MONGOURL=mongo:27017
+      - ORIGIN=${origin}
+      - WEBHOOK=${slack_webhook}
+    links:
+      - mongo
+    labels:
+      io.rancher.container.pull_image: always
+    ports:
+      - "8880:8880"
+    drain_timeout_ms: 10000
+    health_check:
+        port: 8880
+        request_line: GET / HTTP/1.0
+        interval: 50000
+        initializing_timeout: 50000
+        reinitializing_timeout: 50000
+        unhealthy_threshold: 3
+        strategy: recreate
+        healthy_threshold: 1
+        response_timeout: 50000
+  mongo:
+    image: mongo:3.4
+    restart: always
+    volumes: 
+      - /home/mgeweb/monitoring/mongo:/data/db
+    ports: 
+      - "27017:27017"
+  mongo-backup:
+    image: danmasilva/mongo-juniatime:1.5
+    restart: always
+    volumes:
+      - /home/mgeweb/compartilhado/mongo-backups:/etc/backups
+    links:
+      - mongo
+    
+
+
+    
