@@ -21,7 +21,7 @@ services:
     ports: 
       - "27017:27017"
   mongo-backup:
-    image: danmasilva/mongo-juniatime:1.6
+    image: danmasilva/mongo-juniatime:1.7
     restart: always
     volumes:
       - /home/mgeweb/compartilhado/mongo-backups:/etc/backups
